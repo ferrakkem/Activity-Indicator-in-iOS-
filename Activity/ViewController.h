@@ -8,7 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController{
+    IBOutlet UIWebView *webView;
+    IBOutlet UIActivityIndicatorView *activityind;
+    NSTimer *timer;
+}
 
 
 @end

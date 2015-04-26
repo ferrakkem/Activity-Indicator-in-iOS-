@@ -17,6 +17,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"https://www.facebook.com" ]]];
+    [webView addSubview:activityind];
+    timer =[NSTimer scheduledTimerWithTimeInterval:(1.0/2.0) target:self selector:@selector(loading) userInfo:nil repeats:YES];
+}
+
+
+-(void)loading{
+    if(!webView.loading){
+        [activityind stopAnimating];
+    }else{
+        [activityind startAnimating];
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning {
